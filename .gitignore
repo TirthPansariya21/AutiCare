@@ -1,15 +1,24 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# ── Dependencies ─────────────────────────────────────────────────────────
 node_modules/
 
-# Expo
+# ── Environment variables (secrets — NEVER commit) ───────────────────────
+.env
+.env.*
+.env*.local
+
+# ── Expo ─────────────────────────────────────────────────────────────────
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native
+# ── Generated native folders ─────────────────────────────────────────────
+/ios
+/android
+
+# ── Native build artifacts ───────────────────────────────────────────────
 .kotlin/
 *.orig.*
 *.jks
@@ -17,27 +26,40 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
+*.pem
 
-# Metro
+# ── Metro / bundler ──────────────────────────────────────────────────────
 .metro-health-check*
 
-# debug
+# ── Debug logs ───────────────────────────────────────────────────────────
 npm-debug.*
 yarn-debug.*
 yarn-error.*
 
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
+# ── TypeScript ───────────────────────────────────────────────────────────
 *.tsbuildinfo
 
-app-example
+# ── macOS ────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# generated native folders
-/ios
-/android
+# ── Windows ──────────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Linux ────────────────────────────────────────────────────────────────
+*~
+
+# ── IDE / Editor ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ── Misc ─────────────────────────────────────────────────────────────────
+app-example/
