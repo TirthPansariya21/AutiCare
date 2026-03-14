@@ -47,7 +47,7 @@ const AAC_IMAGES = {
   hungry: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
   thirsty: "https://cdn-icons-png.flaticon.com/128/2447/2447774.png",
   bathroom: "https://cdn-icons-png.flaticon.com/128/14696/14696192.png",
-  tired: "https://cdn-icons-png.flaticon.com/128/3997/3997779.png ",
+  tired: "https://cdn-icons-png.flaticon.com/128/3997/3997779.png",
   help: "https://cdn-icons-png.flaticon.com/128/682/682055.png",
   rest: "https://cdn-icons-png.flaticon.com/128/3993/3993416.png",
   happy: "https://cdn-icons-png.flaticon.com/512/742/742751.png",
@@ -375,7 +375,7 @@ export default function Child() {
 
 const styles = StyleSheet.create({
   header: {
-    paddingTop: 55,
+    paddingTop: 10,
     paddingBottom: 15,
     alignItems: 'center',
     zIndex: 1,
@@ -492,8 +492,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     paddingHorizontal: 16,
     paddingTop: 8,
-    paddingBottom: 110, // room for floating button
-    gap: 12, // Reduced whitespace
+    paddingBottom: 90,
+    gap: 12,
   },
   emptyText: {
     ...Theme.typography.bodyLarge,

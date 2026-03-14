@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, ImageBackground } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function CalmBackground({ children }: { children: React.ReactNode }) {
   return (
@@ -9,9 +10,9 @@ export default function CalmBackground({ children }: { children: React.ReactNode
       imageStyle={styles.patternImage}
       resizeMode="cover"
     >
-
-      {/* Render the screen content above the shapes and illustration */}
-      {children}
+      <SafeAreaView style={styles.safeArea}>
+        {children}
+      </SafeAreaView>
     </ImageBackground>
   );
 }
@@ -21,10 +22,13 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
-    backgroundColor: '#F8F9FA', // Clean off-white background
+    backgroundColor: '#F8F9FA',
+  },
+  safeArea: {
+    flex: 1,
   },
   patternImage: {
-    opacity: 0.8, // Raised opacity significantly as this is a full-featured wallpaper rather than a noisy repeating pattern
+    opacity: 0.8,
     resizeMode: 'cover',
   }
 });

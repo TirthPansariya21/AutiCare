@@ -57,13 +57,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 100,
+    paddingVertical: 40,
     paddingHorizontal: 25,
     zIndex: 1, 
   },
   header: {
     alignItems: "center",
-    marginTop: 60,
+    marginTop: 20,
   },
   title: {
     ...Theme.typography.h1,

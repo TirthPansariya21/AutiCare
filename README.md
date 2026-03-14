@@ -2,40 +2,41 @@
   <img src="./assets/images/icon.png" alt="AutiCare Logo" width="120" />
 </p>
 
-<h1 align="center">AutiCare</h1>
+<h1 align="center">AutiCare – AI Powered Autism Support & Communication Platform</h1>
 
 <p align="center">
-  <strong>A compassionate mobile companion for parents navigating the autism spectrum journey</strong>
+  <strong>Helping parents understand autism while empowering children to communicate through AAC tools.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/React_Native-0.81-61DAFB?logo=react&logoColor=white" alt="React Native" />
-  <img src="https://img.shields.io/badge/Expo-SDK_54-000020?logo=expo&logoColor=white" alt="Expo" />
-  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <a href="https://reactnative.dev/"><img src="https://img.shields.io/badge/React_Native-0.81-61DAFB?logo=react&logoColor=white" alt="React Native" /></a>
+  <a href="https://expo.dev/"><img src="https://img.shields.io/badge/Expo-SDK_54-000020?logo=expo&logoColor=white" alt="Expo" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript" /></a>
   <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20Android-green" alt="Platform" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License" />
 </p>
 
 ---
 
 ## 📌 Problem Statement
 
-Approximately **1 in 36 children** in the United States is diagnosed with Autism Spectrum Disorder (ASD). Yet many parents:
+According to the World Health Organization (WHO), approximately **1 in 127 children worldwide** is diagnosed with Autism Spectrum Disorder. Yet many parents:
 
 - Struggle to identify early developmental indicators in their children.
 - Feel overwhelmed and lack accessible, judgment-free guidance.
 - Have limited access to affordable specialists, especially in rural or underserved areas.
 - Need practical day-to-day strategies but don't know where to start.
 
-Early identification and informed parenting can dramatically improve outcomes, but **the gap between concern and professional help can be months or even years**.
+Early identification and informed parenting can dramatically improve outcomes, but the gap between concern and professional help can be months or even years.
 
-## 💡 Solution
+## 💡 Our Solution
 
-**AutiCare** bridges that gap by putting supportive tools directly in parents' hands — on their phone, available anytime, completely offline.
+**AutiCare** bridges that gap by putting supportive tools directly in families' hands. 
 
-The app offers an **AI-powered parenting assistant**, a **validated screening questionnaire** (inspired by M-CHAT-R), a **visual communication board (AAC)**, and a **specialist locator** — all wrapped in a calming, accessible interface designed for stressed parents.
+Our solution is thoughtfully balanced between two primary goals:
+1. **Helping parents** detect early behavioral signs and understand their child's unique needs.
+2. **Empowering autistic children** to communicate effectively and confidently.
 
-> ⚠️ **AutiCare is not a diagnostic tool.** It is designed to educate, support, and empower parents while encouraging professional consultation.
+The platform combines **offline AI guidance** for parents, observational **autism screening tools**, direct **expert access**, and an innovative **AAC visual communication board** for children — all wrapped in a calming, sensory-friendly interface.
 
 ---
 
@@ -48,167 +49,67 @@ A fully **offline, keyword-based** assistant that analyses a parent's descriptio
 - Suggested Strategies
 - When to Seek Professional Help
 
-Covers **12 behavior categories** with **400+ keyword variations**, including:
-| Category | Examples |
-|---|---|
-| Eye Contact | "avoids eye contact", "won't look at me" |
-| Speech & Language | "not talking", "echolalia", "nonverbal" |
-| Repetitive Behaviors | "hand flapping", "stimming", "lines up toys" |
-| Sensory Sensitivity | "covers ears", "hates loud noises", "clothing sensitivity" |
-| Social Interaction | "plays alone", "no friends", "misses social cues" |
-| Meltdowns | "emotional outburst", "self harm", "can't calm down" |
-| Routine & Transitions | "hates change", "rigid", "won't try new things" |
-| Eating / Picky Eating | "picky eater", "food texture", "gagging food" |
-| Sleep Problems | "won't sleep", "night terrors", "bedtime battle" |
-| Toilet Training | "potty training", "afraid of toilet" |
-| Anxiety & Fears | "separation anxiety", "school refusal", "panic" |
-| Name Response | "doesn't respond to name", "in their own world" |
+Covers **12 behavior categories** with **400+ keyword variations** (e.g., eye contact, meltdowns, sensory sensitivity, picky eating).
 
-### 📋 Autism Risk Screening (M-CHAT-R Inspired)
-- 20 developmental questions with weighted scoring (Never → Always)
-- Calculates risk level: **Low**, **Moderate**, or **High**
-- Results screen with clear breakdown and medical disclaimer
-
-### 🗣️ Communication Board (AAC)
-- Image-based Augmentative & Alternative Communication tiles
-- Categorized by: Common, Feelings, Needs, Actions, Places
-- Text-to-Speech support for non-verbal children
-- Parents can add **custom tiles** with their own images
+### 📋 Autism Risk Screening
+- **10 observational questions** based on established developmental indicators.
+- Helps parents observe and document behavioral patterns such as:
+  - Response to name
+  - Eye contact
+  - Social attention
+  - Interaction patterns
+- Calculates a weighted score to indicate potential behavioral indicators.
+- *Note: This screening helps identify signs but is NOT a medical diagnosis.*
 
 ### 🔍 Expert Connect
-- Locates autism specialists near the parent using **Google Places API**
-- Displays clinic name, address, and rating
-- Graceful fallback to demo data if offline
+Enables quick and simple access to professional help by allowing parents to find autism specialists and therapists in their preferred city.
+- Users can directly connect with therapists.
+- **WhatsApp Chat button:** Redirects the user to WhatsApp to instantly start a conversation with the therapist.
+- **Call button:** Allows users to directly call the expert with a single tap.
 
-### 👶 Child & Parent Profiles
-- Track child details, developmental milestones, and preferences
-- Maintain parent profile for personalized experience
+### ⭐ AAC Visual Communication Board
+A core innovation of AutiCare, this feature provides Augmentative and Alternative Communication (AAC) support for non-verbal or minimally verbal children.
 
----
-
-## 🛠️ Technology Stack
-
-| Layer | Technology |
-|---|---|
-| **Framework** | React Native 0.81 + Expo SDK 54 |
-| **Language** | TypeScript 5.9 |
-| **Routing** | Expo Router (file-based) |
-| **Animations** | React Native Reanimated 4 |
-| **Fonts** | Nunito (via `@expo-google-fonts`) |
-| **Icons** | Ionicons (`@expo/vector-icons`) |
-| **Location** | Expo Location |
-| **Speech** | Expo Speech (TTS for AAC board) |
-| **Image Picking** | Expo Image Picker |
-| **AI Assistant** | Local keyword-matching engine (fully offline) |
+- **Visual Communication:** Allows children to communicate using clear, intuitive visual icons.
+- **Text-to-Speech (TTS):** Each icon triggers TTS, so the child’s selection is spoken aloud clearly.
+- **Expressive Power:** Helps children effortlessly express emotions, needs, and daily activities.
+- **Therapeutic Standard:** Designed using principles widely used by speech therapists and special educators.
 
 ---
 
-## 🚀 Getting Started
+## 🔄 How It Works
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v18+)
-- [Expo CLI](https://docs.expo.dev/get-started/installation/) — installed globally or use `npx`
-- [Expo Go](https://expo.dev/go) app on your phone (iOS / Android)
-
-### Installation
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/<your-username>/AutiCare.git
-cd AutiCare
-
-# 2. Install dependencies
-npm install
-
-# 3. (Optional) Create a .env file for the Expert Connect feature
-#    Get a Google Places API key from https://console.cloud.google.com
-echo "EXPO_PUBLIC_GEMINI_API_KEY=your_google_places_key_here" > .env
-
-# 4. Start the development server
-npx expo start
-```
-
-### Running on Your Device
-1. Scan the QR code shown in the terminal with **Expo Go** (Android) or **Camera app** (iOS).
-2. The app will load on your phone over your local network.
-
-### Running on Emulator
-```bash
-# Android
-npx expo start --android
-
-# iOS (macOS only)
-npx expo start --ios
-```
+1. **Parent opens the app** and selects **Parent Mode**.
+2. They can use the **AI Assistant** for immediate, offline guidance regarding specific behaviors.
+3. They complete the **Autism Risk Screening** questionnaire to track behavioral observation patterns.
+4. They can easily contact specialists via the **Expert Connect** WhatsApp chat or call buttons.
+5. **Child Mode** provides the **AAC visual communication board** to help the child confidently express their daily needs and emotions.
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Tech Stack
 
-```
-AutiCare/
-├── app/                    # Screens (file-based routing)
-│   ├── index.tsx           # Home / Onboarding
-│   ├── select.tsx          # Feature selection hub
-│   ├── assistant.tsx       # AI Parenting Assistant chat
-│   ├── questionnaire.tsx   # Autism screening questionnaire
-│   ├── questionnaire-results.tsx
-│   ├── child.tsx           # Child profile & milestones
-│   ├── parent.tsx          # Parent profile
-│   └── experts.tsx         # Expert Connect (Places API)
-├── components/
-│   └── ui/                 # Reusable UI components
-│       ├── Theme.ts        # Design tokens (colors, typography)
-│       ├── CalmBackground.tsx
-│       ├── AnimatedButton.tsx
-│       └── AbstractPuzzle*.tsx
-├── utils/
-│   └── gemini.ts           # Keyword-based AI assistant engine
-├── assets/images/          # App icons, splash screen
-├── app.json                # Expo configuration
-├── package.json
-└── tsconfig.json
-```
+- **React Native** - Cross-platform mobile framework
+- **Expo** - Development platform and native modules
+- **TypeScript** - Type-safe JavaScript
 
 ---
 
 ## 🔮 Future Improvements
 
-- [ ] **Multi-language support** — Hindi, Gujarati, Spanish, and more
-- [ ] **Progress tracking dashboard** — visual graphs of developmental milestones over time
-- [ ] **Therapist appointment booking** — in-app scheduling with local specialists
-- [ ] **Community forum** — safe, moderated space for parents to share experiences
-- [ ] **Push notifications** — daily tips and activity reminders
-- [ ] **Offline screening history** — save past questionnaire results locally
-- [ ] **Dark mode** — for late-night reading comfort
-- [ ] **Export reports** — generate PDF reports to share with healthcare providers
+### AI Video Behaviour Analyzer
+In the future, the app will feature a privacy-first video analysis tool. Parents could upload short videos of their child playing or interacting. The AI would analyze the video to estimate behavioral risk indicators by studying:
+- Eye contact behavior
+- Repetitive movements
+- Facial expressions
 
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue first to discuss what you'd like to change.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+The system could then estimate a percentage-based autism risk score to assist with early objective screening before visiting a specialist.
 
 ---
 
 ## ⚠️ Disclaimer
 
-**AutiCare is not a medical or diagnostic tool.** It provides general parenting guidance based on well-known developmental indicators. The screening questionnaire offers awareness, not diagnosis. Always consult qualified healthcare professionals — including developmental pediatricians, child psychologists, and speech-language pathologists — for clinical evaluation and treatment.
+This application is designed as a support and awareness tool and **does not provide medical diagnosis**. Parents should always consult qualified healthcare professionals—such as developmental pediatricians, child psychologists, or speech-language pathologists—for clinical evaluation and treatment.
 
 ---
-
-<p align="center">
-  Made with 💙 for families navigating the autism journey
-</p>
+<p align="center">Made with 💙 for families navigating the autism journey</p>

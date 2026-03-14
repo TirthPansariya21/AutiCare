@@ -18,18 +18,7 @@ export default function ParentDashboard() {
   const router = useRouter();
   const { width } = useWindowDimensions();
 
-  // Responsive Grid Logic:
-  // Max-width 1000px container.
-  // >= 1024px: 3 columns
-  // >= 768px: 2 columns
-  // < 768px: 1 column
-  const isDesktop = width >= 1024;
-  const isTablet = width >= 768 && width < 1024;
-  const getCardWidth = () => {
-    if (isDesktop) return '31%';
-    if (isTablet) return '48%';
-    return '100%';
-  };
+  const isDesktop = width >= 900;
 
   const features: FeatureCardProps[] = [
     {
@@ -52,7 +41,7 @@ export default function ParentDashboard() {
       title: "Expert Connect",
       description: "Find and connect with autism specialists near you.",
       route: "/experts",
-      icon: "medkit", // using medkit instead of pure medical for doctor/support feel
+      icon: "medkit",
       color: Theme.colors.accent,
       buttonText: "Find Experts"
     }
@@ -64,29 +53,32 @@ export default function ParentDashboard() {
         contentContainerStyle={styles.scrollContent} 
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.container}>
+        <View style={[styles.container, isDesktop && styles.containerDesktop]}>
           
           <View style={styles.header}>
             <Text style={styles.title}>Parent Dashboard</Text>
             <Text style={styles.subtitle}>Tools & support to help your child thrive</Text>
           </View>
 
-          <View style={styles.gridContainer}>
+          {/* Desktop: row layout | Mobile: vertical stack */}
+          <View style={[styles.cardList, isDesktop && styles.cardListDesktop]}>
             {features.map((feature, index) => (
               <AnimatedButton
                 key={index}
-                style={[styles.card, { width: getCardWidth() as any }]}
+                style={[styles.card, isDesktop && styles.cardDesktop]}
                 onPress={() => router.push(feature.route as any)}
                 scaleValue={0.98}
               >
-                {/* Icon Area */}
+                {/* Icon */}
                 <View style={[styles.iconContainer, { backgroundColor: `${feature.color}15` }]}>
-                  <Ionicons name={feature.icon} size={40} color={feature.color} />
+                  <Ionicons name={feature.icon} size={36} color={feature.color} />
                 </View>
 
-                {/* Text Content */}
-                <Text style={styles.cardTitle}>{feature.title}</Text>
-                <Text style={styles.cardDescription}>{feature.description}</Text>
+                {/* Text */}
+                <View style={styles.cardTextContainer}>
+                  <Text style={styles.cardTitle}>{feature.title}</Text>
+                  <Text style={styles.cardDescription}>{feature.description}</Text>
+                </View>
 
                 {/* Action Button */}
                 <View style={[styles.actionButton, { backgroundColor: feature.color }]}>
@@ -106,84 +98,105 @@ export default function ParentDashboard() {
 
 const styles = StyleSheet.create({
   scrollContent: {
-    paddingVertical: 40,
-    alignItems: 'center',
+    flexGrow: 1,
+    paddingTop: 20,
+    paddingBottom: 40,
   },
   container: {
     width: '100%',
-    maxWidth: 1000, // Centered container max-width around 1000px
+    paddingHorizontal: 20,
+  },
+  containerDesktop: {
+    maxWidth: 1000,
+    alignSelf: 'center',
     paddingHorizontal: 24,
   },
   header: {
-    marginBottom: 40,
+    marginBottom: 28,
     alignItems: 'flex-start',
   },
   title: {
     ...Theme.typography.h2,
-    fontSize: 28, // Title font size 28px
+    fontSize: 28,
     color: '#2C3E50',
     marginBottom: 8,
   },
   subtitle: {
     ...Theme.typography.body,
-    fontSize: 16, // Subtitle 16px
+    fontSize: 16,
     color: '#7F8C8D',
   },
-  gridContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 24, // 24px gap between cards
-    justifyContent: 'flex-start',
+
+  // ── Card list ──────────────────────────────────
+  // Mobile: simple vertical stack
+  cardList: {
+    gap: 16,
   },
+  // Desktop: horizontal row
+  cardListDesktop: {
+    flexDirection: 'row',
+    gap: 24,
+  },
+
+  // ── Individual card ────────────────────────────
   card: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 16, // Soft rounded corners (16px)
-    padding: 24, // Balanced padding (24px)
-    justifyContent: 'space-between',
+    borderRadius: 16,
+    padding: 20,
     alignItems: 'center',
-    
-    // Subtle shadow
+    width: '100%',
+
+    // Shadow
     shadowColor: '#A0AAB2',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.15,
     shadowRadius: 12,
     elevation: 4,
 
-    // Add a very subtle border for definition
+    // Border
     borderWidth: 1,
     borderColor: '#F1F5F9',
   },
+  cardDesktop: {
+    flex: 1,
+    padding: 24,
+  },
+
   iconContainer: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+    width: 64,
+    height: 64,
+    borderRadius: 32,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 16,
+  },
+  cardTextContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 16,
   },
   cardTitle: {
     ...Theme.typography.h3,
-    fontSize: 18, // Card title 18px
-    fontWeight: 'bold', // Bold
+    fontSize: 18,
+    fontWeight: 'bold',
     color: '#2C3E50',
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: 8,
   },
   cardDescription: {
     ...Theme.typography.body,
-    fontSize: 14, // Description 14px
-    color: '#95A5A6', // Soft gray color
+    fontSize: 14,
+    color: '#95A5A6',
     textAlign: 'center',
     lineHeight: 20,
-    marginBottom: 24,
   },
   actionButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 20, // Rounded medium button
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 20,
     width: '100%',
   },
   actionButtonText: {

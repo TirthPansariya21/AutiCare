@@ -235,8 +235,9 @@ export default function AutismRiskScreen() {
 
 const styles = StyleSheet.create({
   scrollContainer: {
-    padding: 20,
-    paddingBottom: 60,
+    flexGrow: 1,
+    padding: 16,
+    paddingBottom: 100,
   },
   disclaimerBox: {
     backgroundColor: "#FFF3CD",
@@ -284,7 +285,7 @@ const styles = StyleSheet.create({
   questionCard: {
     backgroundColor: Theme.colors.cardBackground,
     borderRadius: Theme.borderRadius.lg,
-    padding: 24,
+    padding: 18,
     borderWidth: 1,
     borderColor: "#E2E8F0",
     ...Theme.shadows.medium,
@@ -309,21 +310,22 @@ const styles = StyleSheet.create({
     ...Theme.typography.bodyLarge,
     fontWeight: "600",
     color: "#2C3E50",
-    marginBottom: 24,
-    lineHeight: 28,
+    fontSize: 17,
+    marginBottom: 16,
+    lineHeight: 24,
   },
 
   // Options
   optionsContainer: {
-    gap: 10,
-    marginBottom: 28,
+    gap: 8,
+    marginBottom: 20,
   },
   optionButton: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 14,
-    paddingHorizontal: 16,
-    borderRadius: 14,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    borderRadius: 12,
     borderWidth: 2,
     borderColor: "#E2E8F0",
     backgroundColor: "#F8FAFC",
